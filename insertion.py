@@ -1,17 +1,17 @@
 #tri insertion 
 
-tablo = [4,3,12,10,35,22,44,15,2]
+tablo = [4,3,12,-10,35,-22,44,15,2]
 
-def tri_selection(tab):
-   for i in range(len(tab)):
+def tri_selection(liste):
+   for i in range(len(liste)):
        mini = i
-       for j in range(i+1, len(tab)):
-           if tab[mini] > tab[j]:
+       for j in range(i+1, len(liste)):
+           if liste[mini] > liste[j]:
                mini = j
                 
-       X = tab[i]
-       tab[i] = tab[mini]
-       tab[mini] = X
-   return tab
+       X = liste[i]
+       liste[i] = liste[mini]
+       liste[mini] = X
+   return liste
             
-print(tri_selection(tab))
+print(tri_selection(tablo))
