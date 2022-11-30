@@ -1,4 +1,4 @@
-#tri insertion 
+#tri selection 
 
 tablo = [4,3,12,-10,35,-22,44,15,2]
 
