@@ -65,7 +65,7 @@ def tri_insertion(liste):
                 X -= 1
         liste[X + 1] = Y
         compaison += 1
-    print("liste rangé :\n {} \n nombre de passage: {}".format(liste, passage))
+    print("liste rangé :\n {} \n nombre de passage: {}".format(liste, comparaison))
     #print("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
     return [comparaison,echanges*3]
   
@@ -96,4 +96,3 @@ print("tri par selection      // ", stats_selection[0],"    ", stats_selection[1
 print("tri par insertion      // ", stats_insertion[0],"    ",stats_insertion[1])
 print("tri à bulles           // ", stats_bulles[0],"    ",stats_bulles[1])
 print("tri à bulles optimisé  // ", stats_bulle_opti[0],"    ",stats_bulle_opti[1]  )
-
