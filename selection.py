@@ -26,7 +26,7 @@ def tri_selection(liste):
         liste[mini] = X
         passage +=1
        
-    return print("liste triée : \n {} \n nombre de passage : {}".format(liste,passage))
-    #return ("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
+    print("liste triée : \n {} \n nombre de passage : {}".format(liste,passage))
+    #print("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
             
 tri_selection(randomlist)
