@@ -22,8 +22,8 @@ def tri_insertion(liste):
                 passage +=1
                 X -= 1
         liste[X + 1] = Y
-    return ("liste rangé :\n {} \n nombre de passage: {}".format(liste, passage))
-    #return ("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
+    print("liste rangé :\n {} \n nombre de passage: {}".format(liste, passage))
+    #print("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
     
 
 tri_insertion(randomlist)
