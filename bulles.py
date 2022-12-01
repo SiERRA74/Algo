@@ -9,12 +9,13 @@ def listgenerator(n):
         a = random.randint(-1000,10000)
         l.append(a)
     return l
-        
+
+
 randomlist = listgenerator(1000)
 
 
 def tri_bulles(liste):
-    start = time.time()    
+    #start = time.time()    
     echange = True
     passage = 0
     while echange == True:
@@ -25,6 +26,8 @@ def tri_bulles(liste):
                 echange = True
                 liste[i], liste[i+1] = liste[i+1],liste[i]
             passage += 1
-    return ("liste rangé :\n{} \n temps écoulé : {} ".format(liste, time.time() - start))
+            
+    return print("liste triée : \n {} \n nombre de passage : {}".format(liste,passage))
+    #return print("liste trié :\n{} \n temps écoulé : {} ".format(liste, time.time() - start))
 
-print(tri_bulles(randomlist),"\n"))
+tri_bulles(randomlist)
