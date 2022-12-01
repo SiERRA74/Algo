@@ -2,7 +2,7 @@
 
 import time
 import random
-#tri en bulles(simple)
+
 def listgenerator(n):
     l = []
     for i in range(n):
@@ -20,14 +20,14 @@ def tri_bulles(liste):
     passage = 0
     while echange == True:
         echange = False
-        passage = 0
-        for i in range(0 , len(liste)-1 - passage):
+        nion = 0
+        for i in range(0 , len(liste)-1 - nion):
             if liste[i] > liste[i+1]:
                 echange = True
                 liste[i], liste[i+1] = liste[i+1],liste[i]
             passage += 1
             
-    return print("liste triée : \n {} \n nombre de passage : {}".format(liste,passage))
-    #return print("liste trié :\n{} \n temps écoulé : {} ".format(liste, time.time() - start))
+    print("liste triée : \n {} \n nombre de passage : {}".format(liste,passage))
+    #print("liste trié :\n{} \n temps écoulé : {} ".format(liste, time.time() - start))
 
 tri_bulles(randomlist)
