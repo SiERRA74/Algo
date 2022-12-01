@@ -2,6 +2,20 @@
 import time
 import random
 
+def toThousand(n):
+    l = []
+    for i in range(1,n+1):
+        l.append(i)
+    return l
+
+def toZero(n):
+    l = []
+    while n >= 0:
+        l.append(n)
+        n = n - 1
+    return l
+
+
 def listgenerator(n):
     l = []
     for i in range(n):
@@ -10,6 +24,8 @@ def listgenerator(n):
     return l
 
 
+countdown = toZero(1000)
+thousand = toThousand(1000)
 randomlist = listgenerator(1000)
 
 
@@ -80,6 +96,7 @@ def tri_bulle_opti(liste):
                 liste[j+1], liste[j] = liste[j], liste[j+1]
                 sorted = False
                 echanges +=1
+            comparaison +=1
     sorted = True
     if sorted == True:
         print("liste rangé :\n {} \n nombre de comparaison: {}\n nombre d'échanges: {}".format(liste, comparaison, echanges))
