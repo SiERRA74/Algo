@@ -96,3 +96,13 @@ print("tri par selection      // ", stats_selection[0],"    ", stats_selection[1
 print("tri par insertion      // ", stats_insertion[0],"    ",stats_insertion[1])
 print("tri à bulles           // ", stats_bulles[0],"    ",stats_bulles[1])
 print("tri à bulles optimisé  // ", stats_bulle_opti[0],"    ",stats_bulle_opti[1]  )
+
+
+def stats(mini, maxi, step, lim):
+    for i in range(mini, maxi + step, step):
+        com = 0
+        for n in range(lim):
+            ls = [rd.randint(0, 100) for _ in range(i)]
+            com += tri_bulles(randomlist)
+        print(i, com / lim *0.1)
+stats(10, 20, 5, 500)
