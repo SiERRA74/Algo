@@ -1,5 +1,6 @@
 #tri selection 
 
+import time
 import random
 
 def listgenerator(n):
@@ -12,15 +13,20 @@ def listgenerator(n):
 randomlist = listgenerator(1000)
  
 def tri_selection(liste):
-   for i in range(len(liste)):
-       mini = i
-       for j in range(i+1, len(liste)):
-           if liste[mini] > liste[j]:
-               mini = j
+    #start = time.time()
+    passage = 0
+    for i in range(len(liste)):
+        mini = i
+        for j in range(i+1, len(liste)):
+            if liste[mini] > liste[j]:
+                mini = j
                 
-       X = liste[i]
-       liste[i] = liste[mini]
-       liste[mini] = X
-   return liste
+        X = liste[i]
+        liste[i] = liste[mini]
+        liste[mini] = X
+        passage +=1
+       
+    return print("liste triée : \n {} \n nombre de passage : {}".format(liste,passage))
+    #return ("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
             
-print(tri_selection(randomlist))
+tri_selection(randomlist)
