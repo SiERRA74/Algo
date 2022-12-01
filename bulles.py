@@ -25,6 +25,6 @@ def tri_bulles(liste):
                 echange = True
                 liste[i], liste[i+1] = liste[i+1],liste[i]
             passage += 1
-    return ("liste rangé :\n{} \n ".format(liste, time.time() - start))
+    return ("liste rangé :\n{} \n temps écoulé : {} ".format(liste, time.time() - start))
 
-print(tri_bulles(randomlist),"\n", time.time())
+print(tri_bulles(randomlist),"\n"))
