@@ -1,4 +1,3 @@
-#tri en bulles(simple)
 
 import time
 import random
@@ -33,7 +32,7 @@ def tri_bulles(liste):
     #print("liste trié :\n{} \n temps écoulé : {} ".format(liste, time.time() - start))
     return [comparaison,echanges*3]
 
- def tri_selection(liste):
+def tri_selection(liste):
     #start = time.time()
     comparaison = 0
     echanges = 0
@@ -47,11 +46,11 @@ def tri_bulles(liste):
         X = liste[i]
         liste[i] = liste[mini]
         liste[mini] = X
-        passage +=1
+        comparaison +=1
        
-    print("liste triée : \n {} \n nombre de comparaison : {}\n nombre d'échanges : {}".format(liste,passage,echanges))
+    print("liste triée : \n {} \n nombre de comparaison : {}\n nombre d'échanges : {}".format(liste,comparaison,echanges))
     #print("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
-    return [passage,echanges*3]
+    return [comparaison,echanges*3]
 
 def tri_insertion(liste): 
     comparaison = 0
@@ -87,15 +86,14 @@ def tri_bulle_opti(liste):
         #print("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
         return [comparaison,echanges]
       
-print("_______________________// nb comparaisons // nb echanges.        (1 échanges = 3 affectations)")       
+      
 stats_bulle_opti = tri_bulle_opti(randomlist)  
 stats_bulles = tri_bulles(randomlist)
 stats_selection = tri_selection(randomlist)
 stats_insertion = tri_insertion(randomlist)
+print("_______________________// nb comparaisons // nb echanges.        (1 échanges = 3 affectations)") 
 print("tri par selection      // ", stats_selection[0],"    ", stats_selection[1]  )
 print("tri par insertion      // ", stats_insertion[0],"    ",stats_insertion[1])
 print("tri à bulles           // ", stats_bulles[0],"    ",stats_bulles[1])
 print("tri à bulles optimisé  // ", stats_bulle_opti[0],"    ",stats_bulle_opti[1]  )
-
-
 
