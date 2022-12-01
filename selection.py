@@ -1,7 +1,16 @@
 #tri selection 
 
-tablo = [4,3,12,-10,35,-22,44,15,2]
+import random
 
+def listgenerator(n):
+    l = []
+    for i in range(n):
+        a = random.randint(-1000,10000)
+        l.append(a)
+    return l
+        
+randomlist = listgenerator(1000)
+ 
 def tri_selection(liste):
    for i in range(len(liste)):
        mini = i
@@ -14,4 +23,4 @@ def tri_selection(liste):
        liste[mini] = X
    return liste
             
-print(tri_selection(tablo))
+print(tri_selection(randomlist))
