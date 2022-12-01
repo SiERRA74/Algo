@@ -64,7 +64,7 @@ def tri_insertion(liste):
                 echanges +=1
                 X -= 1
         liste[X + 1] = Y
-        compaison += 1
+        comparaison += 1
     print("liste rangé :\n {} \n nombre de passage: {}".format(liste, comparaison))
     #print("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
     return [comparaison,echanges*3]
