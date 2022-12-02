@@ -1,4 +1,4 @@
-
+#amin kassiev
 #Suite de Fibonacci en ittération et recursivité 
 
 def fibo(X):
