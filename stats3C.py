@@ -83,13 +83,16 @@ def stats(mini, maxi, pas, preci,def_tri):
             cout += def_tri(liste)
         total = round((cout / preci * 0.1),2) 
         print("len de liste : {}\ncoût moyen {} \ncout en temps :{}\n".format(i, total , time.time()-start)
-stat(150, 200, 10, 500,tri_selection)
+        
+#stats(150, 200, 10, 500,tri_selection)
 
   
       
-stats_tri_selec = stats(10,20,5,10,tri_selection())
-stats_tri_inser = stats(10,20,5,10,tri_insertion())
-stats_tri_bulle = stats(10,20,5,10,tri_bulle())
-stats_tri_bulle_opti = stats(10,20,5,10,tri_bulle_opti())
+stats_tri_selec = stats(200, 200, 10, 500,tri_selection())
+stats_tri_inser = stats(200, 200, 1, 500,tri_insertion())
+stats_tri_bulle = stats(200, 200, 1, 500,tri_bulle())
+stats_tri_bulle_opti = stats(200, 200, 1, 500,tri_bulle_opti())
       
-print(stats_tri_selec, "\n",stats_tri_inser, "\n",stats_tri_bulle, "\n",stats_tri_bulle_opti, "\n")
+#print(stats_tri_selec, "\n",stats_tri_inser, "\n",stats_tri_bulle, "\n",stats_tri_bulle_opti, "\n")
+
+
