@@ -134,7 +134,7 @@ DEBUT_POUR
 		SI (l[j+1] < l[j]) ALORS
 		DEBUT_SI
 
-l		[j+1], l[j] PREND_LA_VALEUR l[j], l[j+1]
+		l[j+1], l[j] PREND_LA_VALEUR l[j], l[j+1]
 		sorted PREND_LA_VALEUR False
 		passage += 1
 
