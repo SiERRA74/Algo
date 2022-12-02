@@ -1,15 +1,7 @@
 
+
 import time
 import random
-
-
-def listgenerator(n):
-    l = []
-    for i in range(n):
-        a = random.randint(-1000, 10000)
-        l.append(a)
-    return l
-
 
 def tri_bulle(liste):
     #start = time.time()
@@ -85,12 +77,13 @@ def stats(mini, maxi, pas, preci, def_tri):
             liste = [random.randint(0, 100) for _ in range(i)]
             cout += def_tri(liste)
         total = round((cout / preci * 0.1), 2)
-        print("{}\nlen de liste : {}\ncoût moyen {} \ncout en temps :{}\n".format(
+        print("{}\nlen de liste : {}\ncoût moyen : {} \ncout en temps :{}\n".format(
             def_tri, i, total, time.time()-start))
 
 
-stats_tri_selec = stats(10, 20, 5, 10, tri_selection)
-stats_tri_inser = stats(10, 20, 5, 10, tri_insertion)
-stats_tri_bulle = stats(10, 20, 5, 10, tri_bulle)
-stats_tri_bulle_opti = stats(10, 20, 5, 10, tri_bulle_opti)
+stats_tri_selec = stats(90, 100, 10, 5, tri_selection)
+stats_tri_inser = stats(90, 100, 10, 5, tri_insertion)
+stats_tri_bulle = stats(90, 100, 10, 5, tri_bulle)
+stats_tri_bulle_opti = stats(90, 100, 10, 5, tri_bulle_opti)
+
 
