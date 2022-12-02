@@ -1,4 +1,3 @@
-
 import time
 import random
 
@@ -15,77 +14,56 @@ def toZero(n):
         n = n - 1
     return l
 
-
-def listgenerator(n):
-    l = []
-    for i in range(n):
-        a = random.randint(-1000,10000)
-        l.append(a)
-    return l
-
-
-countdown = toZero(1000)
-thousand = toThousand(1000)
-randomlist = listgenerator(1000)
-
-
-def tri_bulles(liste):
-    #start = time.time()    
+def tri_bulle(liste):
+    #start = time.time()
     echange = True
     comparaison = 0
     echanges = 0
     while echange == True:
         echange = False
         nion = 0
-        for i in range(0 , len(liste)-1 - nion):
+        for i in range(0, len(liste)-1 - nion):
             if liste[i] > liste[i+1]:
                 echange = True
-                liste[i], liste[i+1] = liste[i+1],liste[i]
-                echanges +=1
+                liste[i], liste[i+1] = liste[i+1], liste[i]
+                echanges += 3
             comparaison += 1
-            
-    print("liste triée : \n {} \n nombre de comparaisons : {}\n comtpeurs d'échange : {} \n".format(liste,comparaison,echanges*3))
-    #print("liste trié :\n{} \n temps écoulé : {} ".format(liste, time.time() - start))
-    return [comparaison,echanges*3]
+    return comparaison + echanges
+
 
 def tri_selection(liste):
-    #start = time.time()
     comparaison = 0
-    echanges = 0
+    echange = 0
     for i in range(len(liste)):
         mini = i
         for j in range(i+1, len(liste)):
-            echanges += 1
             if liste[mini] > liste[j]:
+                comparaison += 1
                 mini = j
-                
+
         X = liste[i]
         liste[i] = liste[mini]
         liste[mini] = X
-        comparaison +=1
-       
-    print("liste triée : \n {} \n nombre de comparaison : {}\n nombre d'échanges : {}".format(liste,comparaison,echanges))
-    #print("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
-    return [comparaison,echanges*3]
+        echange += 3
+    return comparaison + echange
 
-def tri_insertion(liste): 
+
+def tri_insertion(liste):
     comparaison = 0
     echanges = 0
-    start = time.time()
-    for i in range(1, len(liste)): 
-        Y = liste[i] 
+    #start = time.time()
+    for i in range(1, len(liste)):
+        Y = liste[i]
         X = i-1
-        while X >= 0 and Y < liste[X] : 
-                liste[X + 1] = liste[X] 
-                echanges +=1
-                X -= 1
+        while X >= 0 and Y < liste[X]:
+            liste[X + 1] = liste[X]
+            echanges += 3
+            X -= 1
         liste[X + 1] = Y
         comparaison += 1
-    print("liste rangé :\n {} \n nombre de passage: {}".format(liste, comparaison))
-    #print("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
-    return [comparaison,echanges*3]
-  
-  
+    return comparaison+echanges
+
+
 def tri_bulle_opti(liste):
     comparaison = 0
     echanges = 0
@@ -95,31 +73,39 @@ def tri_bulle_opti(liste):
             if liste[j] > liste[j+1]:
                 liste[j+1], liste[j] = liste[j], liste[j+1]
                 sorted = False
-                echanges +=1
-            comparaison +=1
+                echanges += 3
+            comparaison += 1
     sorted = True
     if sorted == True:
-        print("liste rangé :\n {} \n nombre de comparaison: {}\n nombre d'échanges: {}".format(liste, comparaison, echanges))
-        #print("liste rangé :\n{} \n time elapsed : {}".format(liste, time.time() - start))
-        return [comparaison,echanges]
-      
-      
-stats_bulle_opti = tri_bulle_opti(randomlist)  
-stats_bulles = tri_bulles(randomlist)
-stats_selection = tri_selection(randomlist)
-stats_insertion = tri_insertion(randomlist)
-print("_______________________// nb comparaisons // nb echanges.        (1 échanges = 3 affectations)") 
-print("tri par selection      // ", stats_selection[0],"    ", stats_selection[1]  )
-print("tri par insertion      // ", stats_insertion[0],"    ",stats_insertion[1])
-print("tri à bulles           // ", stats_bulles[0],"    ",stats_bulles[1])
-print("tri à bulles optimisé  // ", stats_bulle_opti[0],"    ",stats_bulle_opti[1]  )
+        return comparaison+echanges
+"""
+def stats(mini, maxi, pas, preci, def_tri):
+    for i in range(mini, maxi + pas, pas):
+        start = time.time()
+        cout = 0
+        for n in range(preci):
+            liste = toZero(100)
+            liste = toThousand(100)
+            cout += def_tri(liste)
+        total = round((cout / preci * 0.1), 2)
+        print("{}\nlen de liste : {}\ncoût moyen : {} \ncout en temps :{}\n".format(
+            def_tri, i, total, time.time()-start))
+"""            
 
+def stats(mini, maxi, pas, preci, def_tri):
+    for i in range(mini, maxi + pas, pas):
+        print("--------------------------------")
+        start = time.time()
+        cout = 0
+        for n in range(preci):
+            liste = [random.randint(0, 100) for _ in range(i)]
+            cout += def_tri(liste)
+        total = round((cout / preci * 0.1), 2)
+        print("{}\nlen de liste : {}\ncoût moyen : {} \ncout en temps :{} sec\n".format(
+            def_tri, i, total, time.time()-start))
+     
 
-def stats(mini, maxi, step, lim):
-    for i in range(mini, maxi + step, step):
-        com = 0
-        for n in range(lim):
-            ls = [rd.randint(0, 100) for _ in range(i)]
-            com += tri_bulles(randomlist)
-        print(i, com / lim *0.1)
-stats(10, 20, 5, 500)
+stats_tri_selec = stats(100, 500, 100, 5, tri_selection)
+stats_tri_inser = stats(100, 500, 100, 5, tri_insertion)
+stats_tri_bulle = stats(100, 500, 100, 5, tri_bulle)
+stats_tri_bulle_opti = stats(100, 500, 100, 5, tri_bulle_opti)
