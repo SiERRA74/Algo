@@ -1,0 +1,41 @@
+Jordan Busquet
+
+ALGO tri_insertion
+
+FONCTIONS_UTILISEES
+FONCTION tri_insertion(liste)
+VARIABLES_FONCTION
+
+passage EST_DU_TYPE NOMBRE
+i EST_DU_TYPE NOMBRE
+start EST_DU_TYPE FLOAT
+Y EST_DU_TYPE liste
+l EST_DU_TYPE LISTE
+X EST_DU_TYPE NOMBRE
+
+DEBUT_FONCTION
+
+passage PREND_LA_VALEUR 0
+start EST_DU_TYPE FLOAT
+
+POUR i ALLANT_DE 1 A len(l)
+
+	Y PREND_LA_VALEUR l[i]
+	X PREND_LA_VALEUR i-1
+
+		TANT_QUE (X >= 0 et Y < l[X]) FAIRE
+		DEBUT_TANT_QUE
+
+			l[X+1] PREND_LA_VALEUR l[X]
+			passage PREND_LA_VALEUR passage+1
+			X PREND_LA_VALEUR X-1
+
+		FIN_TANT_QUE
+
+	l[X+1] PREND_LA_VALEUR Y
+
+	FIN_POUR
+
+AFFICHER "liste triée : \n {} \n nombre de passage : {}".format(liste,passage)
+
+FIN_FONCTION
