@@ -1,0 +1,61 @@
+Algo fibonacci : Esteban DARDILLAC 
+
+1)
+fonction fibonacci 
+DÉBUT Fonction
+
+fn = 0
+a = 0
+b = 1
+
+DÉBUT Tant que
+Tant que c  < 300 :
+
+	DÉBUT Si
+	Si fn <= 2
+
+		c = fn
+		afficher c
+
+	FIN Si 
+
+	DÉBUT Sinon
+	Sinon	
+
+		c = a + b 
+		a = b 
+		b = c
+		afficher c 
+
+	FIN Sinon
+	
+	fn s’incrémente de 1
+ 
+FIN Tant que
+
+FIN Fonction
+
+
+2)
+fonction fib
+DÉBUT Fonction
+
+DÉBUT Si 
+Si n < 300 :
+
+	DÉBUT Si
+	Si n<=1:
+ 
+		retourner n
+	FIN Si
+	
+	DÉBUT Sinon 
+	Sinon : 
+
+		retourner fib (n-1)+fib (n-2)
+
+	FIN Sinon
+
+FIN Si
+
+FIN Fonction
