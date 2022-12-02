@@ -1,4 +1,5 @@
-﻿
+Esteban DARDILLAC
+
 ALGO tri_selection :
 FONCTIONS_UTILISEES
 FONCTION tri_selection(l)
